@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Divyang Kasodiya | UI/UX Designer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="UI/UX portfolio of Divyang Kasodiya, IMCA student and aspiring UI/UX designer.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* HERO BACKGROUND IMAGE */
+    .hero-bg {
+      background-image: url("port_img.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+    .hero-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* NAME ANIMATION (RIGHT TO LEFT) */
+    .name-animate {
+      opacity: 0;
+      transform: translateX(80px);
+      animation: nameSlide 1.2s ease forwards;
+    }
+
+    @keyframes nameSlide {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .skill {
+      background: #f4f4f5;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+    .dark .skill {
+      background: #27272a;
+    }
+
+    .project-card {
+      background: #f4f4f5;
+      padding: 32px;
+      border-radius: 24px;
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+    }
+    .dark .project-card {
+      background: #18181b;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-black dark:bg-black dark:text-white">
+
+<!-- THEME TOGGLE -->
+<div class="fixed top-5 right-5 z-50">
+  <button onclick="toggleMode()"
+    class="bg-zinc-200 dark:bg-zinc-800 px-4 py-2 rounded-lg text-sm font-semibold">
+    🌙 / ☀️
+  </button>
+</div>
+
+<!-- HERO -->
+<section class="hero-bg fade">
+  <div class="max-w-6xl mx-auto px-6 py-32 hero-content text-white">
+
+    <h1 class="text-5xl font-bold name-animate" style="animation-delay:0.2s;">
+      Divyang Kasodiya
+    </h1>
+
+    <p class="mt-3 text-lg text-gray-200">
+      UI/UX Designer · IMCA Student
+    </p>
+
+    <p class="max-w-2xl mt-6 text-gray-300">
+      Aspiring UI/UX designer focused on creating clean, intuitive,
+      user-centered digital experiences.
+    </p>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="max-w-6xl mx-auto px-6 py-16 fade">
+  <h2 class="text-3xl font-semibold mb-4">About Me</h2>
+  <p class="max-w-3xl text-gray-600 dark:text-gray-400">
+    I am an IMCA student with a strong interest in UI/UX design. I enjoy turning
+    ideas into meaningful digital interfaces through wireframing, prototyping,
+    and thoughtful layout design using Figma.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section class="max-w-6xl mx-auto px-6 py-16 fade">
+  <h2 class="text-3xl font-semibold mb-6">Skills</h2>
+  <div class="flex flex-wrap gap-3">
+    <span class="skill">Wireframing</span>
+    <span class="skill">Prototyping</span>
+    <span class="skill">User Flows</span>
+    <span class="skill">UI Design</span>
+    <span class="skill">UX Design</span>
+    <span class="skill">Figma</span>
+    <span class="skill">Adobe XD</span>
+    <span class="skill">HTML</span>
+    <span class="skill">CSS</span>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="max-w-6xl mx-auto px-6 py-16 fade">
+  <h2 class="text-3xl font-semibold mb-8">Projects</h2>
+
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="project-card">
+      <h3 class="text-xl font-semibold">E-commerce App</h3>
+      <p class="mt-3 text-gray-600 dark:text-gray-400">
+        Designed wireframes and high-fidelity prototypes focused on usability,
+        product discovery, and conversion.
+      </p>
+      <a href="https://www.figma.com/design/vGSKgEHVo1dvae6s7oJKf6/E-com"
+         target="_blank"
+         class="inline-block mt-5 text-emerald-500 font-semibold">
+        View on Figma →
+      </a>
+    </div>
+
+    <div class="project-card">
+      <h3 class="text-xl font-semibold">Grocery Store App</h3>
+      <p class="mt-3 text-gray-600 dark:text-gray-400">
+        Clean grocery shopping experience with simple navigation and clear
+        visual hierarchy.
+      </p>
+      <a href="https://www.figma.com/design/igC82HjNDtNSy401vVrXZ1/Grocery_store"
+         target="_blank"
+         class="inline-block mt-5 text-emerald-500 font-semibold">
+        View on Figma →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT DETAILS -->
+<section class="max-w-6xl mx-auto px-6 py-16 fade">
+  <h2 class="text-3xl font-semibold mb-6">Contact Details</h2>
+  <div class="space-y-3 text-gray-600 dark:text-gray-400">
+    <p><strong>Email:</strong> divyangp075@gmail.com</p>
+    <p><strong>Phone:</strong> +91 88495 33901</p>
+    <p><strong>Address:</strong> Ahmedabad, Gujarat, India</p>
+  </div>
+</section>
+
+<footer class="text-center py-10 text-gray-500 text-sm">
+  © 2025 Divyang Kasodiya
+</footer>
+
+<script>
+  const elements = document.querySelectorAll(".fade");
+  const reveal = () => {
+    elements.forEach(el => {
+      if (!el.classList.contains("show") &&
+          el.getBoundingClientRect().top < window.innerHeight - 100) {
+        el.classList.add("show");
+      }
+    });
+  };
+  window.addEventListener("scroll", reveal);
+  reveal();
+
+  function toggleMode() {
+    document.documentElement.classList.toggle("dark");
+    localStorage.setItem(
+      "theme",
+      document.documentElement.classList.contains("dark") ? "dark" : "light"
+    );
+  }
+
+  if (localStorage.getItem("theme") === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+</script>
+
+</body>
+</html>
